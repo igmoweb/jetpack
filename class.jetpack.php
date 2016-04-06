@@ -2185,29 +2185,29 @@ class Jetpack {
 	 * @return array Array of absolute paths to the PHP files.
 	 */
 	public static function glob_php( $absolute_path ) {
-		$absolute_path = untrailingslashit( $absolute_path );
-		$files = array();
-		if ( ! $dir = @opendir( $absolute_path ) ) {
-			return $files;
-		}
+//		$absolute_path = untrailingslashit( $absolute_path );
+//		$files = array();
+//		if ( ! $dir = @opendir( $absolute_path ) ) {
+//			return $files;
+//		}
+//
+//		while ( false !== $file = readdir( $dir ) ) {
+//			if ( '.' == substr( $file, 0, 1 ) || '.php' != substr( $file, -4 ) ) {
+//				continue;
+//			}
+//
+//			$file = "$absolute_path/$file";
+//
+//			if ( ! is_file( $file ) ) {
+//				continue;
+//			}
+//
+//			$files[] = $file;
+//		}
+//
+//		closedir( $dir );
 
-		while ( false !== $file = readdir( $dir ) ) {
-			if ( '.' == substr( $file, 0, 1 ) || '.php' != substr( $file, -4 ) ) {
-				continue;
-			}
-
-			$file = "$absolute_path/$file";
-
-			if ( ! is_file( $file ) ) {
-				continue;
-			}
-
-			$files[] = $file;
-		}
-
-		closedir( $dir );
-
-		return $files;
+		return array();
 	}
 
 	public static function activate_new_modules( $redirect = false ) {
@@ -2328,6 +2328,7 @@ class Jetpack {
 					'shortcodes.php',
 					'shortlinks.php',
 					'site-icon.php',
+					'sitemaps.php',
 					'social-links.php',
 					'sso.php',
 					'stats.php',

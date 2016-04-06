@@ -7,8 +7,9 @@
  * First Introduced: 1.1
  * Requires Connection: Yes
  * Auto Activate: No
- * Module Tags: WordPress.com Stats, Recommended
- * Feature: Recommended
+ * Module Tags: Site Stats, Recommended
+ * Feature: Recommended, Traffic
+ * Additional Search Queries: statistics, tracking, analytics, views, traffic, stats
  */
 
 if ( defined( 'STATS_VERSION' ) ) {

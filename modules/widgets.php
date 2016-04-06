@@ -27,12 +27,14 @@ function jetpack_load_widgets() {
 		'facebook-likebox.php',
 		'gallery.php',
 		'goodreads.php',
+		'googleplus-badge.php',
 		'gravatar-profile.php',
 		'image-widget.php',
 		'rsslinks-widget.php',
 		'social-media-icons.php',
 		'top-posts.php',
 		'twitter-timeline.php',
+		'upcoming-events.php',
 		'wordpress-post-widget.php'
 	);
 
