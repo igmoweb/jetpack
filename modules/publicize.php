@@ -6,7 +6,7 @@
  * Recommendation Order: 7
  * First Introduced: 2.0
  * Requires Connection: Yes
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Social, Recommended
  * Feature: Recommended
  */

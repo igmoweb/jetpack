@@ -5,7 +5,7 @@
  * Sort Order: 13
  * First Introduced: 1.9
  * Requires Connection: Yes
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Other
  */
 

@@ -5,16 +5,44 @@
  * Sort Order: 4
  * First Introduced: 1.2
  * Requires Connection: No
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Social, Appearance
  */
 
 function jetpack_load_widgets() {
 	$widgets_include = array();
 
+	/*
+	 * START CAMPUS CHANGE: We are going to load this files manually
+	 */
+	/*
 	foreach ( Jetpack::glob_php( dirname( __FILE__ ) . '/widgets' ) as $file ) {
 		$widgets_include[] = $file;
 	}
+	*/
+	$dir = dirname( __FILE__ ) . '/widgets/';
+	$widgets_files = array(
+		'contact-info.php',
+		'facebook-likebox.php',
+		'gallery.php',
+		'goodreads.php',
+		'gravatar-profile.php',
+		'image-widget.php',
+		'rsslinks-widget.php',
+		'social-media-icons.php',
+		'top-posts.php',
+		'twitter-timeline.php',
+		'wordpress-post-widget.php'
+	);
+
+	foreach ( $widgets_files as $widget_file ) {
+		if ( is_file( $dir . $widget_file ) )
+			$widgets_include[] = $dir . $widget_file;
+	}
+	/*
+	 * END CAMPUS CHANGE:
+	 */
+
 	/**
 	 * Modify which Jetpack Widgets to register.
 	 *

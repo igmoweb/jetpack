@@ -16,7 +16,7 @@ class Jetpack_Client {
 			'blog_id' => 0,
 			'auth_location' => JETPACK_CLIENT__AUTH_LOCATION,
 			'method' => 'POST',
-			'timeout' => 10,
+			'timeout' => 5,
 			'redirection' => 0,
 		);
 

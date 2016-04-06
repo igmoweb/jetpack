@@ -868,7 +868,7 @@ EOT;
 		$response = wp_remote_post(
 			"https://public-api.wordpress.com/rest/v1/sites/{$this->_blog_id_wpcom}/posts/$post_id/related/",
 			array(
-				'timeout' => 10,
+				'timeout' => 5,
 				'user-agent' => 'jetpack_related_posts',
 				'sslverify' => true,
 				'body' => $body,

@@ -8,7 +8,7 @@
  * First Introduced: 1.1
  * Major Changes In: 1.2
  * Requires Connection: No
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Social, Recommended
  * Feature: Recommended, Jumpstart
  */

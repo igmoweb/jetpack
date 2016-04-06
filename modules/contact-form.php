@@ -7,7 +7,7 @@
  * Recommendation Order: 14
  * First Introduced: 1.3
  * Requires Connection: No
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Other
  * Feature: Jumpstart
  */

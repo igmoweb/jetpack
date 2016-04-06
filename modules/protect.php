@@ -6,7 +6,7 @@
  * Recommendation Order: 4
  * First Introduced: 3.4
  * Requires Connection: Yes
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Recommended
  * Feature: Recommended
  */
@@ -652,7 +652,7 @@ class Jetpack_Protect_Module {
 			'body'        => $request,
 			'user-agent'  => $user_agent,
 			'httpversion' => '1.0',
-			'timeout'     => 15
+			'timeout'     => 5
 		);
 
 		$response_json           = wp_remote_post( $this->get_api_host(), $args );

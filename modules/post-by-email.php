@@ -6,7 +6,7 @@
  * First Introduced: 2.0
  * Sort Order: 14
  * Requires Connection: Yes
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Writing
  */
 
@@ -113,7 +113,7 @@ class Jetpack_Post_By_Email {
 					<div id="jp-pbe-info"<?php echo $info_hidden; ?>>
 						<p id="jp-pbe-email-wrapper">
 							<input type="text" id="jp-pbe-email" value="<?php echo esc_attr( $email ); ?>" readonly="readonly" class="regular-text" />
-							<span class="description"><a target="_blank" href="http://jetpack.me/support/post-by-email/"><?php esc_html_e( 'More information', 'jetpack' ); ?></a></span>
+							<span class="description"><a target="_blank" href="http://help.edublogs.org/2014/01/27/post-by-email/"><?php esc_html_e( 'More information', 'jetpack' ); ?></a></span>
 						</p>
 						<p>
 							<input type="button" name="jp-pbe-regenerate" id="jp-pbe-regenerate" class="button" value="<?php esc_attr_e( 'Regenerate Address', 'jetpack' ); ?> " />

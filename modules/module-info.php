@@ -996,3 +996,5 @@ function jetpack_manage_more_link() {
 }
 add_action( 'jetpack_learn_more_button_manage', 'jetpack_manage_more_link' );
 // Manage: STOP
+
+do_action( 'jetpack_module_info_loaded' );

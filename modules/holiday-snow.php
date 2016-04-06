@@ -6,7 +6,7 @@
  * Not a module that is activated/deactivated
  * First Introduced: 2.0.3 ??
  * Requires Connection: No
- * Auto Activate: Yes
+ * Auto Activate: No
  */
 
 class Jetpack_Holiday_Snow_Settings {

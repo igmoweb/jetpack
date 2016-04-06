@@ -394,11 +394,11 @@ class Jetpack_XMLRPC_Server {
 		$api->token_details['user'] = $user_details;
 		require_once JETPACK__PLUGIN_DIR . 'class.json-api-endpoints.php';
 
-		$display_errors = ini_set( 'display_errors', 0 );
+		//$display_errors = ini_set( 'display_errors', 0 );
 		ob_start();
 		$content_type = $api->serve( false );
 		$output = ob_get_clean();
-		ini_set( 'display_errors', $display_errors );
+		//ini_set( 'display_errors', $display_errors );
 
 		$nonce = wp_generate_password( 10, false );
 		$hmac  = hash_hmac( 'md5', $nonce . $output, $token->secret );

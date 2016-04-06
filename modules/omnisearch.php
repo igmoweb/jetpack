@@ -6,7 +6,7 @@
  * Sort Order: 16
  * First Introduced: 2.3
  * Requires Connection: No
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Developers
  */
 

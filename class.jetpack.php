@@ -488,7 +488,7 @@ class Jetpack {
 		add_action( 'remove_user_from_blog', array( $this, 'unlink_user' ), 10, 1 );
 
 		if ( defined( 'XMLRPC_REQUEST' ) && XMLRPC_REQUEST && isset( $_GET['for'] ) && 'jetpack' == $_GET['for'] ) {
-			@ini_set( 'display_errors', false ); // Display errors can cause the XML to be not well formed.
+			//@ini_set( 'display_errors', false ); // Display errors can cause the XML to be not well formed.
 
 			require_once JETPACK__PLUGIN_DIR . 'class.jetpack-xmlrpc-server.php';
 			$this->xmlrpc_server = new Jetpack_XMLRPC_Server();
@@ -1534,10 +1534,6 @@ class Jetpack {
 	 * @return array Array of absolute paths to the PHP files.
 	 */
 	public static function glob_php( $absolute_path ) {
-		if ( function_exists( 'glob' ) ) {
-			return glob( "$absolute_path/*.php" );
-		}
-
 		$absolute_path = untrailingslashit( $absolute_path );
 		$files = array();
 		if ( ! $dir = @opendir( $absolute_path ) ) {
@@ -1633,10 +1629,74 @@ class Jetpack {
 			if ( ! is_admin() && ! empty( $available_modules_option[ JETPACK__VERSION ] ) ) {
 				$modules = $available_modules_option[ JETPACK__VERSION ];
 			} else {
+				/*
+				 * START CAMPUS CHANGE: We are going to load this files manually
+				 */
+				/*
 				$files = Jetpack::glob_php( JETPACK__PLUGIN_DIR . 'modules' );
 
 				$modules = array();
 
+				*/
+				$dir = JETPACK__PLUGIN_DIR . 'modules/';
+				$modules_files = array(
+					'after-the-deadline.php',
+					'carousel.php',
+					'comments.php',
+					'contact-form.php',
+					'custom-content-types.php',
+					'custom-css.php',
+					'debug.php',
+					'enhanced-distribution.php',
+					'gplus-authorship.php',
+					'gravatar-hovercards.php',
+					'holiday-snow.php',
+					'infinite-scroll.php',
+					'json-api.php',
+					'latex.php',
+					'likes.php',
+					'manage.php',
+					'markdown.php',
+					'minileven.php',
+					'mobile-push.php',
+					'module-extras.php',
+					'module-headings.php',
+					'module-info.php',
+					'monitor.php',
+					'notes.php',
+					'omnisearch.php',
+					'photon.php',
+					'post-by-email.php',
+					'protect.php',
+					'publicize.php',
+					'random-redirect.php',
+					'related-posts.php',
+					'sharedaddy.php',
+					'shortcodes.php',
+					'shortlinks.php',
+					'site-icon.php',
+					'social-links.php',
+					'sso.php',
+					'stats.php',
+					'subscriptions.php',
+					'theme-tools.php',
+					'tiled-gallery.php',
+					'tonesque.php',
+					'vaultpress.php',
+					'verification-tools.php',
+					'videopress.php',
+					'widget-visibility.php',
+					'widgets.php',
+					'wpcc.php'
+				);
+
+				$files = array();
+
+				foreach ( $modules_files as $module_file ) {
+					if ( is_file( $dir . $module_file ) )
+						$files[] = $dir . $module_file;
+				}
+			
 				foreach ( $files as $file ) {
 					if ( ! $headers = Jetpack::get_module( $file ) ) {
 						continue;
@@ -1644,6 +1704,10 @@ class Jetpack {
 
 					$modules[ Jetpack::get_module_slug( $file ) ] = $headers['introduced'];
 				}
+			
+				/*
+				 * END CAMPUS CHANGE:
+				 */
 
 				Jetpack_Options::update_option( 'available_modules', array(
 					JETPACK__VERSION => $modules,
@@ -1963,12 +2027,12 @@ class Jetpack {
 		static $display_errors, $error_reporting;
 
 		if ( $catch ) {
-			$display_errors  = @ini_set( 'display_errors', 1 );
-			$error_reporting = @error_reporting( E_ALL );
+			//$display_errors  = @ini_set( 'display_errors', 1 );
+			//$error_reporting = @error_reporting( E_ALL );
 			add_action( 'shutdown', array( 'Jetpack', 'catch_errors_on_shutdown' ), 0 );
 		} else {
-			@ini_set( 'display_errors', $display_errors );
-			@error_reporting( $error_reporting );
+			//@ini_set( 'display_errors', $display_errors );
+			//@error_reporting( $error_reporting );
 			remove_action( 'shutdown', array( 'Jetpack', 'catch_errors_on_shutdown' ), 0 );
 		}
 	}
@@ -3025,12 +3089,6 @@ p {
 				<div class="squeezer">
 					<h4>
 						<?php _e( 'You have successfully disconnected Jetpack.', 'jetpack' ); ?>
-						<br />
-						<?php echo sprintf(
-							__( 'Would you tell us why? Just <a href="%1$s" target="%2$s">answering two simple questions</a> would help us improve Jetpack.', 'jetpack' ),
-							'https://jetpack.me/survey-disconnected/',
-							'_blank'
-						); ?>
 					</h4>
 				</div>
 			</div>
@@ -4465,10 +4523,7 @@ p {
 	 * @return int
 	 **/
 	public function get_remote_query_timeout_limit() {
-	    $timeout = (int) ini_get( 'max_execution_time' );
-	    if ( ! $timeout ) // Ensure exec time set in php.ini
-		$timeout = 30;
-	    return intval( $timeout / 2 );
+	    return 4;
 	}
 
 

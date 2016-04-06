@@ -7,7 +7,7 @@
  * Recommendation Order: 8
  * First Introduced: 1.2
  * Requires Connection: Yes
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Social
  * Feature: Jumpstart
  */

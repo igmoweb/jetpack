@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Module Name: Shortcode Embeds
+ * Module Name: Slideshow Embeds
  * Module Description: Embed content from YouTube, Vimeo, SlideShare, and more, no coding necessary.
  * Sort Order: 3
  * First Introduced: 1.1
  * Major Changes In: 1.2
  * Requires Connection: No
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Photos and Videos, Social, Writing, Appearance
  */
 
@@ -42,9 +42,57 @@ function jetpack_load_shortcodes() {
 
 	$shortcode_includes = array();
 
+	/*
+	 * START CAMPUS CHANGE: We are going to load this files manually
+	 */
+	/*
 	foreach ( Jetpack::glob_php( dirname( __FILE__ ) . '/shortcodes' ) as $file ) {
 		$shortcode_includes[] = $file;
 	}
+	*/
+	$dir = dirname( __FILE__ ) . '/shortcodes/';
+	$shortcodes_files = array(
+		'archives.php',
+		'audio.php',
+		'bandcamp.php',
+		'blip.php',
+		'cartodb.php',
+		'dailymotion.php',
+		'diggthis.php',
+		'facebook.php',
+		'flickr.php',
+		'gist.php',
+		'googlemaps.php',
+		'googleplus.php',
+		'googlevideo.php',
+		'instagram.php',
+		'medium.php',
+		'mesh.php',
+		'mixcloud.php',
+		'polldaddy.php',
+		'presentations.php',
+		'recipe.php',
+		'scribd.php',
+		'slideshare.php',
+		'slideshow.php',
+		'soundcloud.php',
+		'ted.php',
+		'twitter-timeline.php',
+		'videopress.php',
+		'vimeo.php',
+		'vine.php',
+		'wufoo.php',
+		'youtube.php'
+	);
+
+	$shortcode_includes = array();
+	foreach ( $shortcodes_files as $shortcode_file ) {
+		if ( is_file( $dir . $shortcode_file ) )
+			$shortcode_includes[] = $dir . $shortcode_file;
+	}
+	/*
+	 * END CAMPUS CHANGE:
+	 */
 
 /**
  * This filter allows other plugins to override which shortcodes Jetpack loads.

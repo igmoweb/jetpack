@@ -5,7 +5,7 @@
  * Sort Order: 6
  * First Introduced: 1.1
  * Requires Connection: Yes
- * Auto Activate: Yes
+ * Auto Activate: No
  * Module Tags: Writing
  */
 

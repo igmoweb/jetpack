@@ -23,7 +23,7 @@ function AtD_http_post( $request, $host, $path, $port = 80 ) {
 		*
 		* @param int $var Timeout time in seconds, default 15.
 		*/
-		'timeout'              => apply_filters( 'atd_http_post_timeout', 15 ),
+		'timeout'              => apply_filters( 'atd_http_post_timeout', 5 ),
 	);
 
 	// Handle non-standard ports being passed in.

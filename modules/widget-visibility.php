@@ -5,7 +5,7 @@
  * Module Description: Specify which widgets appear on which pages of your site.
  * First Introduced: 2.4
  * Requires Connection: No
- * Auto Activate: Yes
+ * Auto Activate: No
  * Sort Order: 17
  * Module Tags: Appearance
  */

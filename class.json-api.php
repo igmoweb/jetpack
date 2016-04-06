@@ -137,7 +137,7 @@ class WPCOM_JSON_API {
 	}
 
 	function serve( $exit = true ) {
-		ini_set( 'display_errors', false );
+		//ini_set( 'display_errors', false );
 
 		$this->exit = (bool) $exit;
 
