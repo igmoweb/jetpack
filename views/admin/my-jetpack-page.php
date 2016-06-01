@@ -156,7 +156,7 @@
 								<h2><?php _e( 'Disconnecting Jetpack', 'jetpack' ); ?></h2>
 								<p><?php _e( 'Before you completely disconnect Jetpack is there anything we can do to help?', 'jetpack' ); ?></p>
 								<a class="button" id="confirm-disconnect" title="<?php esc_attr_e( 'Disconnect Jetpack', 'jetpack' ); ?>" href="<?php echo wp_nonce_url( Jetpack::admin_url( 'action=disconnect' ), 'jetpack-disconnect' ); ?>"><?php _e( 'Confirm Disconnect', 'jetpack' ); ?></a>
-								<a class="button primary" id="support-no-disconnect" target="_blank" title="<?php esc_attr_e( 'Jetpack Support', 'jetpack' ); ?>" href="http://jetpack.com/contact-support/"><?php esc_html_e( 'I Need Support', 'jetpack' ); ?></a>
+								<a class="button primary" id="support-no-disconnect" target="_blank" title="<?php esc_attr_e( 'Jetpack Support', 'jetpack' ); ?>" href="http://edublogs.org/contact/"><?php esc_html_e( 'I Need Support', 'jetpack' ); ?></a>
 							<?php else : ?>
 								<h2><?php _e( 'Can not disconnect Jetpack', 'jetpack' ); ?></h2>
 								<p><?php
@@ -166,7 +166,7 @@
 									);
 								?></p>
 								<input type="button" class="button" disabled="disabled" id="confirm-disconnect" value="<?php _e( 'Confirm Disconnect', 'jetpack' ); ?>">
-								<a class="button primary" id="support-no-disconnect" target="_blank" title="<?php esc_attr_e( 'Jetpack Support', 'jetpack' ); ?>" href="https://jetpack.com/support/why-cant-i-disconnect-my-site/"><?php esc_html_e( 'I Need Support', 'jetpack' ); ?></a>
+								<a class="button primary" id="support-no-disconnect" target="_blank" title="<?php esc_attr_e( 'Jetpack Support', 'jetpack' ); ?>" href="http://edublogs.org/contact/"><?php esc_html_e( 'I Need Support', 'jetpack' ); ?></a>
 							<?php endif; ?>
 							<a class="cancel-disconnect" id="cancel-disconnect" target="_blank" title="<?php esc_attr_e( 'cancel', 'jetpack' ); ?>" href="#"><?php esc_html_e( 'cancel', 'jetpack' ); ?></a>
 
