@@ -445,6 +445,47 @@ module.exports = function(grunt) {
 					]
 				}
 			}
+		},
+		clean: {
+			main: ['build/*']
+		},
+		copy: {
+			main: {
+				src:  [
+					'**',
+					'!npm-debug.log',
+					'!node_modules/**',
+					'!build/**',
+					'!bin/**',
+					'!.git/**',
+					'!Gruntfile.js',
+					'!package.json',
+					'!.gitignore',
+					'!.gitmodules',
+					'!sourceMap.map',
+					'!phpunit.xml.dist',
+					'!travis.yml',
+					'!tests/**',
+					'!**/Gruntfile.js',
+					'!**/package.json',
+					'!**/README.md',
+					'!lite-vs-pro.txt',
+					'!composer.json',
+					'!vendor/**',
+					'!tmp/**',
+					'!**/*~',
+					'!.editorconfig',
+					'!.jshintignore',
+					'!.jshintrc',
+					'!composer.json',
+					'!.svnignore',
+					'!to-test.md',
+					'!tools/**',
+					'!.sass-cache/**',
+					'!.github/**'
+				],
+				dest: 'build/<%= pkg.name %>/'
+			}
 		}
 	};
 
@@ -511,4 +552,11 @@ module.exports = function(grunt) {
 	// Travis CI tasks.
 	grunt.registerTask('travis:js', 'Runs Javascript Travis CI tasks.', [ 'jshint:src', 'qunit' ]);
 	grunt.registerTask('travis:phpunit', 'Runs PHPUnit Travis CI tasks.', 'phpunit');
+
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.registerTask('build-campus', [
+		'clean',
+		'copy'
+	]);
 };
