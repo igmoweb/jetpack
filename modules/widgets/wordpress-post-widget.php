@@ -182,7 +182,7 @@ class Jetpack_Display_Posts_Widget extends WP_Widget {
 	 *
 	 * @return array|WP_Error
 	 */
-	public function fetch_service_endpoint( $endpoint, $timeout = 15 ) {
+	public function fetch_service_endpoint( $endpoint, $timeout = 5 ) {
 
 		/**
 		 * Holds endpoint request cache.

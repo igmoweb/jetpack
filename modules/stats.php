@@ -465,7 +465,7 @@ echo esc_url( apply_filters( 'jetpack_static_url', "{$http}://en.wordpress.com/i
 
 	$url = add_query_arg( $q, $url );
 	$method = 'GET';
-	$timeout = 90;
+	$timeout = 5;
 	$user_id = JETPACK_MASTER_USER; // means send the wp.com user_id
 
 	$get = Jetpack_Client::remote_request( compact( 'url', 'method', 'timeout', 'user_id' ) );
@@ -1031,7 +1031,7 @@ function stats_dashboard_widget_content() {
 
 	$url = add_query_arg( $q, $url );
 	$method = 'GET';
-	$timeout = 90;
+	$timeout = 5;
 	$user_id = JETPACK_MASTER_USER;
 
 	$get = Jetpack_Client::remote_request( compact( 'url', 'method', 'timeout', 'user_id' ) );
@@ -1249,7 +1249,7 @@ function stats_get_csv( $table, $args = null ) {
 
 function stats_get_remote_csv( $url ) {
 	$method = 'GET';
-	$timeout = 90;
+	$timeout = 5;
 	$user_id = JETPACK_MASTER_USER;
 
 	$get = Jetpack_Client::remote_request( compact( 'url', 'method', 'timeout', 'user_id' ) );

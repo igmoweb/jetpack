@@ -676,7 +676,7 @@ class Jetpack_Protect_Module {
 		 *
 		 * @param int $timeout Max time (in seconds) to wait for a response.
 		 */
-		$timeout = apply_filters( 'jetpack_protect_connect_timeout', 30 );
+		$timeout = apply_filters( 'jetpack_protect_connect_timeout', 5 );
 
 		$args = array (
 			'body'        => $request,

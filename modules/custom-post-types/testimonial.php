@@ -228,7 +228,7 @@ class Jetpack_Testimonial {
 	 * Flush permalinks when CPT option is turned on/off
 	 */
 	function flush_rules_on_enable() {
-		flush_rewrite_rules();
+		//flush_rewrite_rules();
 	}
 
 	/*
@@ -238,7 +238,7 @@ class Jetpack_Testimonial {
 		$testimonials = get_transient( 'jetpack-testimonial-count-cache' );
 
 		if ( false === $testimonials ) {
-			flush_rewrite_rules();
+			//flush_rewrite_rules();
 			$testimonials = (int) wp_count_posts( self::CUSTOM_POST_TYPE )->publish;
 
 			if ( ! empty( $testimonials ) ) {
@@ -252,7 +252,7 @@ class Jetpack_Testimonial {
 	 */
 	function flush_rules_on_switch() {
 		if ( current_theme_supports( self::CUSTOM_POST_TYPE ) ) {
-			flush_rewrite_rules();
+			//flush_rewrite_rules();
 		}
 	}
 

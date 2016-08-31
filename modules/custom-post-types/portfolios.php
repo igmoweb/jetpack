@@ -159,7 +159,7 @@ class Jetpack_Portfolio {
 	 * Flush permalinks when CPT option is turned on/off
 	 */
 	function flush_rules_on_enable() {
-		flush_rewrite_rules();
+		//flush_rewrite_rules();
 	}
 
 	/*
@@ -169,7 +169,7 @@ class Jetpack_Portfolio {
 		$projects = get_transient( 'jetpack-portfolio-count-cache' );
 
 		if ( false === $projects ) {
-			flush_rewrite_rules();
+			//flush_rewrite_rules();
 			$projects = (int) wp_count_posts( self::CUSTOM_POST_TYPE )->publish;
 
 			if ( ! empty( $projects ) ) {
@@ -183,7 +183,7 @@ class Jetpack_Portfolio {
 	 */
 	function flush_rules_on_switch() {
 		if ( current_theme_supports( self::CUSTOM_POST_TYPE ) ) {
-			flush_rewrite_rules();
+			//flush_rewrite_rules();
 		}
 	}
 
